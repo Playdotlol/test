@@ -77,7 +77,7 @@ p:hover {
 }
 
 /* Darker Themed Button */
-.button {
+button {
     margin-top: 20px;
     padding: 12px 25px;
     font-size: 1.2rem;
@@ -92,7 +92,7 @@ p:hover {
     overflow: hidden;
 }
 
-.button::before {
+button::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -105,16 +105,16 @@ p:hover {
     transform: translate(-50%, -50%) scale(0);
 }
 
-.button:hover::before {
+button:hover::before {
     transform: translate(-50%, -50%) scale(1);
 }
 
-.button:hover {
+button:hover {
     background: linear-gradient(45deg, #555, #777);
     transform: scale(1.1);
 }
 
-.button:active {
+button:active {
     transform: scale(0.95);
 }
 /* Ripple Effect */
